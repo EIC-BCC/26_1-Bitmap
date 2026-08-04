@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: plataforma-gamificada-simplificada
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+  datasource:
+    url: jdbc:h2:mem:plataforma;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    open-in-view: false
+  jackson:
+    default-property-inclusion: non_null
+
+# ATENÇÃO: segredo e credenciais de demonstração, sem dados reais.
+# Nunca reutilizar estes valores em ambiente de produção.
+app:
+  jwt:
+    secret: "chave-secreta-de-demonstracao-nao-usar-em-producao-troque-este-valor"
+    expiration-ms: 86400000

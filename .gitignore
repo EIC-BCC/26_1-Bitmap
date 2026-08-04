@@ -1,0 +1,4 @@
+back/target/
+back/logs/
+front/node_modules/
+front/dist/
